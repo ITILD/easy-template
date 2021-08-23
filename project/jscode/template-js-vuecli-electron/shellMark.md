@@ -1,0 +1,1 @@
+vue add electron-builder
