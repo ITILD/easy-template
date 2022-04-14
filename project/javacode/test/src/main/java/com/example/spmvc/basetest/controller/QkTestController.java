@@ -4,22 +4,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 import com.example.spmvc.basetest.utils.javaweb.IpUtil;
 import com.example.spmvc.basetest.utils.tencentCloud.TencentcloudapiUsual;
 
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
-import springfox.documentation.annotations.ApiIgnore;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiImplicitParam;
+//import io.swagger.annotations.ApiImplicitParams;
+//import io.swagger.annotations.ApiOperation;
+//import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * FeatureController
@@ -28,12 +31,12 @@ import springfox.documentation.annotations.ApiIgnore;
  * @author WangXu
  * @date 2020/10/23
  */
-@Api(tags = "快速测试")
+@Tag(name = "快速测试", description = "the user API")
 @Controller
 @RequestMapping("/qktest")
 public class QkTestController {
 
-    @ApiOperation(value = "测试模板", notes = "快速测试模板", httpMethod = "GET")
+    @Operation(summary = "doc测试模板", description = "快速测试模板")
     @GetMapping("")
     @ResponseBody
     public String test0() {
@@ -41,15 +44,15 @@ public class QkTestController {
         return "测试成功";
     }
 
-    @ApiOperation(value = "不定参数测试模板", notes = "快速测试模板", httpMethod = "GET")
+    @Operation(summary = "不定参数测试模板", description = "快速测试模板")
     // @ApiImplicitParams({
-    //         @ApiImplicitParam(paramType = "query",name = "name", dataType = "string", value = "only return models..."),
-    //         @ApiImplicitParam(paramType = "query",name = "name0", dataType = "string", value = "only return models...")
-    //         // @ApiImplicitParam(paramType = "header", name = "X-Access-Token", value = "token标记", dataType = "String"),
+    //         @ApiImplicitParam(paramType = "query",name = "name", dataType = "string", summary = "only return models..."),
+    //         @ApiImplicitParam(paramType = "query",name = "name0", dataType = "string", summary = "only return models...")
+    //         // @ApiImplicitParam(paramType = "header", name = "X-Access-Token", summary = "token标记", dataType = "String"),
     // })
     @GetMapping("testParams")
     @ResponseBody
-    public String testParams(@ApiIgnore @RequestParam Map<String, Object> params) {
+    public String testParams( @RequestParam Map<String, Object> params) {
         System.out.println(params);
         System.out.println("test succeed 测试成功");
         return "测试成功";

@@ -1,26 +1,29 @@
 package com.example.spmvc.basetest.controller;
 
 import java.util.Date;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import com.example.spmvc.basetest.utils.javaweb.IpUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 /**
  * @author WangXu
  * @date 2020/10/23
  */
-@Api(tags = "初始控制器")
+@Tag(name = "初始控制器")
 @Controller
 @RequestMapping("")
 public class HelloController {
 
-    @ApiOperation(value = "文档", notes = "转发到swagger文档", httpMethod = "GET")
+    @Operation(summary = "文档", description = "转发到swagger文档")
     @GetMapping("doc")
     public String toSwagger() {
         // return "forward:/swagger-ui/index.html";
@@ -33,7 +36,7 @@ public class HelloController {
     // return "redirect:/b.html";
     // }
 
-    @ApiOperation(value = "get连接测试", notes = "初始快速连接测试", httpMethod = "GET")
+    @Operation(summary = "get连接测试", description = "初始快速连接测试")
     @GetMapping("connect")
     @ResponseBody
     public String test0() {

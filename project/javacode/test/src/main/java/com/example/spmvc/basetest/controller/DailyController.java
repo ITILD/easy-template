@@ -1,21 +1,23 @@
 package com.example.spmvc.basetest.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-//import javafx.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletRequest;
 import com.example.spmvc.basetest.utils.javaweb.IpUtil;
 import com.example.spmvc.basetest.utils.tencentCloud.TencentcloudapiUsual;
-
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+//import javafx.servlet.http.HttpServletRequest;
 
 /**
  * FeatureController
@@ -24,11 +26,11 @@ import io.swagger.annotations.ApiOperation;
  * @author WangXu
  * @date 2022/01/20
  */
-@Api(tags = "日常应用")
+@Tag(name = "日常应用")
 @Controller
 @RequestMapping("/daily")
 public class DailyController {
-    @ApiOperation(value = "修改准许ip", notes = "安全地修改准许ip", httpMethod = "PUT")
+    @Operation(summary = "修改准许ip", description = "安全地修改准许ip")
     @GetMapping("ip")
     @ResponseBody
     public String getTC(HttpServletRequest request, String psd) {
