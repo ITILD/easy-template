@@ -18,7 +18,11 @@ import java.util.Date;
 public class TestServiceImpl {
 
     //打印时间
-    @Scheduled(fixedRate=100) //1000毫秒执行一次
+
+    /**
+     * 广播
+     */
+    @Scheduled(fixedRate=5000) //1000毫秒执行一次
     public  void  printTime(){
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
