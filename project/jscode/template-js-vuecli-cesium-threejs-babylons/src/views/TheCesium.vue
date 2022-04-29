@@ -34,6 +34,7 @@ export default {
     viewer._cesiumWidget._creditContainer.style.display = "none";
     //帧率
     viewer.scene.debugShowFramesPerSecond = true;
+    
   }
 };
 </script>
