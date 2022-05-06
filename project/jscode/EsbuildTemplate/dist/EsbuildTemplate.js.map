@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/TemplateMore.js", "../src/TemplateDefault.js"],
+  "sourcesContent": ["class TemplateMore0 {\r\n  constructor(){\r\n    console.log('\u52A0\u8F7D')\r\n  }\r\n}\r\n\r\nfunction TemplateMore1(params) {\r\n  \r\n}\r\n\r\n\r\nexport {TemplateMore0,TemplateMore1}\r\n", "class TemplateDefault {\r\n  constructor(){\r\n    \r\n  }\r\n}\r\n\r\n\r\n\r\nexport default TemplateDefault;"],
+  "mappings": "AAAA,WAAoB,CAClB,aAAa,CACX,QAAQ,IAAI,cAAI,CAClB,CACF,EAEA,WAAuB,EAAQ,CAE/B,CCRA,WAAsB,CACpB,aAAa,CAEb,CACF,EAIO,EAAQ",
+  "names": []
+}
