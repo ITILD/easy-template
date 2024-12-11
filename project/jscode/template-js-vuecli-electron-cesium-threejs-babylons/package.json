@@ -15,7 +15,7 @@
   "main": "background.js",
   "dependencies": {
     "@babylonjs/core": "^4.2.0",
-    "three": "^0.123.0",
+    "three": "^0.137.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
